@@ -1,0 +1,47 @@
+body {
+  overflow-x: hidden;
+  position: relative;
+  color: $black;
+  @include font('Poppins', 500);
+  // font-family: 'Raleway' sans-serif;
+  // background-color: $black;
+  font-style: normal;
+  &.active-body {
+    overflow: hidden;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 36px;
+}
+
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+ul{
+  list-style: none;
+  li{
+    list-style-type: none;
+  }
+}
+a{
+  text-decoration: none;
+  &:hover{
+    transition: 0.3ms all ease;
+  }
+}
+.btn{
+  background-color: $link-hover;
+  border-radius: 16px;
+  padding: 21px 35px;
+  color: $white;
+}

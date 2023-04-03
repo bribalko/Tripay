@@ -1,0 +1,227 @@
+//___________________________базові стилі для хедера____________________________
+.header{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position: relative; 
+}
+//___________________________/базові стилі для хедера____________________________
+.header {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height: 113px;
+    @media (max-width:768px){
+        background-color: #fff;
+    }
+    &__wrapper {
+        @media (min-width:768px){
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @media (max-width:768px){
+            display:flex;
+            align-items:center;
+            justify-content: space-between;
+            gap:15px;
+            
+        }
+    }
+    &__logo {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 25px;
+        /* identical to box height, or 89% */
+
+
+        color: $link-hover;
+
+    }  
+    &__nav {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        @media (max-width:768px){
+            position: absolute;
+            display: flex;
+            // Кординати розташування nav "top" і "left"
+            // якщо треба поміняти сторону відкривання бургера то якщо треба з права то міняєм "left" на "right" і так само в .active 
+            // якщо треба зверху в низ то ми замість "top: 0;" мiняєм "bottom: 0;" і в .active замість "left:  0;" на "transform: translateY(100%);"
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            display:flex;
+            transition:all .2s;
+            background-color: $link-hover;
+            overflow: auto;
+            &.active{
+                left: 0;
+                transition:all .2s;
+            }
+        }
+    }
+    &__list {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        // Відступ в 30px
+        gap:30px;
+        @media (max-width:768px){
+            
+            flex-direction: column;
+            padding: 30px;
+            gap: 0;
+            margin: auto;
+        }
+    }
+    .header__log{
+        @media (max-width:768px){
+            li:first-child{
+                display: none;
+            }
+        }
+    }
+    &__link {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 27px;
+        /* identical to box height */
+
+
+        color: $link;
+        &:hover{
+            transition:0.3ms all ease;
+            color: $link-hover;
+        }
+        @media (max-width:768px){
+            display: block;
+            font-size: 30px;
+            line-height: 70px;
+            &:not(.btn){
+                color: $white;
+            }
+            &:hover{
+                color: $white;
+            }
+
+        }
+    }
+    .--active-cl{
+        color: $link-hover;
+    }
+    .btn{
+        padding: 21px 35px;
+        // text
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 18px;
+
+        color:$white;
+        background-color:$link-hover;
+        border-radius: 16px;
+        @media (max-width:425px){
+            padding: 11px 25px;
+            
+        }
+
+    }
+    //________________________Робимо щоб меню наполовину що на 2 половину закривалось_______________________________
+    // &__nav {
+    //     @media (max-width:768px){
+    //         position: absolute;
+    //         // Кординати розташування nav
+    //         // якщо треба поміняти сторону відкривання бургера то якщо треба з права то міняєм "left" на "right" і так само в .active 
+    //         // якщо треба зверху в низ то ми замість "top: 0;" мiняєм "bottom: 0;" і в .active замість "left:  0;" на "transform: translateY(100%);"
+    //         top: 0;
+    //         left: -100%;
+    //         width: 100%;
+    //         height: 100vh;
+    //         display:flex;
+    //         transition:all .2s;
+    //         background-color: rgb(0,0,0,.8);
+    //         &.active{
+    //             left: 0;
+    //             transition:all .2s;
+    //         }
+    //     }
+
+    // }
+    // &__list {
+    //     display:flex;
+    //     justify-content:center;
+    //     align-items:center;
+    //     // Відступ в 30px
+    //     gap:30px;
+    //     @media (max-width:768px){
+    //         flex-direction: column;
+    //         padding: 30px;
+    //         gap: 0;
+    //         height: 100%;
+    //         width: 60%;
+    //         background-color: #7fd84b;
+    //         overflow: auto;
+    //     }
+    // }
+    //_______________________________________________________
+}
+//_____________.fixset Клас для фіксатії хедера__________________________________________
+.fixset {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+//____________//.fixset Клас для фіксатії хедера___________________________________________
+
+.mnu {
+    &__icon {
+        display: none;
+        @media (max-width:768px){   
+            display: block;
+            width: 30px;
+            height: 18px;
+            position: relative;
+            z-index: 5;
+            cursor: pointer;
+            span{
+                position: absolute;
+                top: calc(50% - 1px);
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: $black;
+                transition:all .2s;
+                // Робим рисочки 
+                &:first-child{
+                    top: 0;
+                }
+                &:last-child{
+                    top: auto;
+                    bottom: 0;
+                }
+            }
+            &.active{
+                span{
+                    transform: scale(0);
+                    &:first-child{
+                        transform: rotate(-45deg);
+                        top: calc(50% - 1px);
+                    }
+                    &:last-child{
+                        transform: rotate(45deg);
+                        bottom:  calc(50% - 1px);
+    
+                    }
+                }
+            }
+        }
+    }
+}
+.lock{
+    overflow: hidden;
+}

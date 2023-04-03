@@ -1,0 +1,62 @@
+@@include('html/head.html', {
+"title": "Главная"
+})
+@@include('html/header.html', {})
+<main>
+	<section class="hero">
+        <div class="container">
+            <div class="hero__wrapper">
+                <div class="hero__about">
+                    <h1 class="hero__title">Banking Should 
+                        <br>    Be Easy.</h1>
+                    <p class="hero__text">financial transactions without interet using a mobile device such as a smartphone or tablet with bluetooth. </p>
+                    <button type="submit" class="btn">Get started</button>
+                </div>
+                <div class="hero__img">
+                    <img src="./img/hero-img/img-2.png" alt="img" width="635">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="work">
+        <div class="container">
+            <div class="work__wrapper">
+                <div class="work__about">
+                    <h2 class="work__title">How it works</h2>
+                    <p class="work__text-about">Mobile banking differs from mobile payments,<br> which involves the use of a mobile device</p>
+                </div>
+                <ul class="work__menu">
+                    <li class="work__item">
+                        <a href="" class="work__link">
+                            <img src="./img/work/information.png" alt="" class="work-mnu__img">
+                            <h2 class="work-mnu__title">Information</h2>
+                            <p class="work__text">Enter your information
+                                ensure your details
+                                safe and more secure</p>
+                        </a>
+                    </li>
+                    <li class="work__item">
+                        <a href="" class="work__link">
+                            <img src="./img/work/Data-Secure.png" alt="" class="work-mnu__img">
+                            <h2 class="work-mnu__title">Data Secure</h2>
+                            <p class="work__text">Sending money faster &
+                                easier with end to end
+                                encryption.</p>
+                        </a>
+                    </li>
+                    <li class="work__item">
+                        <a href="" class="work__link">
+                            <span class="--add-new">+ Add New</span>
+                            <img src="./img/work/Add-Cards.png" alt="" class="work-mnu__img">
+                            <h2 class="work-mnu__title">Add Cards</h2>
+                            <p class="work__text">Add multiple cards and  track
+                                your daily expense with quality
+                                interface</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+@@include('html/footer.html', {})
